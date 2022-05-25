@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/angular.min.js"></script>
+</head>
+<body ng-controller="CostController" ng-app="myApp">
+<div>
+    <p>Hello!</p>
+    <p>Welcome to {{course}}</p>
+    <script>
+        var app =angular.module('myApp',[]);
+        app.controller('CostController',function ($scope) {
+            $scope.course = "AngularJs";
+
+        });
+    </script>
+</div>
+</body>
+
+</html>

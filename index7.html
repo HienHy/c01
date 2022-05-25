@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="EventApp">
+<script src="./js/angular.min.js"></script>
+<h1> Event</h1>
+<div ng-controller="eventController">
+    New Members: <input type="text" ng-model="quantity" id="quantity" ng-keypress="total=''">
+    <br>
+    <br>
+    Registration Fees: <input type="text" ng-model="fees" id="fees" >
+    <input type="button" name="" id="" value="Calculate" ng-click="Calc()">
+    <br>
+    <br>
+    <b>Total Amount</b>:{{total}}
+</div>
+<script>
+    var app=angular.module('EventApp',[]);
+    app.controller('eventController',function ($scope) {
+        $scope.quantity = 0;
+        $scope.fees = 0;
+        $scope.total = "";
+        $scope.Calc  = function () {
+            if ($scope.quantity >0 && $scope.fees >0){
+                $scope.total=$scope.fees * $scope.quantity
+            }else {
+                $scope.total="Invalid Input";
+            }
+
+        }
+
+    });
+
+
+</script>
+
+
+</body>
+</html>
